@@ -29,7 +29,8 @@ class Calculator {
                     $this->inputNumbers();
                     break;
                 case '2':
-
+                $this->addNumbers();
+                    break;
                     break;
                 case '3':
 
@@ -58,6 +59,21 @@ class Calculator {
         
         echo "Числа сохранены: {$this->num1} и {$this->num2}\n";
     }
+}
+
+private function addNumbers() {
+    if ($this->validateNumbers()) {
+        $result = $this->num1 + $this->num2;
+        echo "Результат сложения: {$this->num1} + {$this->num2} = {$result}\n";
+    }
+}
+
+private function validateNumbers() {
+    if ($this->num1 === null || $this->num2 === null) {
+        echo "Ошибка: сначала введите числа (пункт 1)\n";
+        return false;
+    }
+    return true;
 }
 
 $calculator = new Calculator();
