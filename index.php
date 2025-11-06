@@ -38,7 +38,7 @@ class Calculator {
                     $this->divideNumbers();
                     break;
                 case '5':
-
+                    $this->powerNumbers();
                     break;
                 case '6':
                     echo "До свидания!\n";
@@ -88,6 +88,12 @@ private function divideNumbers() {
             $result = $this->num1 / $this->num2;
             echo "Результат деления: {$this->num1} / {$this->num2} = {$result}\n";
         }
+    }
+}
+private function powerNumbers() {
+    if ($this->validateNumbers()) {
+        $result = pow($this->num1, $this->num2);
+        echo "Результат возведения в степень: {$this->num1} ^ {$this->num2} = {$result}\n";
     }
 }
 
