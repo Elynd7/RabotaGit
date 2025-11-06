@@ -35,7 +35,7 @@ class Calculator {
                     $this->subtractNumbers();
                     break;
                 case '4':
- 
+                    $this->divideNumbers();
                     break;
                 case '5':
 
@@ -78,6 +78,16 @@ private function subtractNumbers() {
     if ($this->validateNumbers()) {
         $result = $this->num1 - $this->num2;
         echo "Результат вычитания: {$this->num1} - {$this->num2} = {$result}\n";
+    }
+}
+private function divideNumbers() {
+    if ($this->validateNumbers()) {
+        if ($this->num2 == 0) {
+            echo "Ошибка: деление на ноль невозможно!\n";
+        } else {
+            $result = $this->num1 / $this->num2;
+            echo "Результат деления: {$this->num1} / {$this->num2} = {$result}\n";
+        }
     }
 }
 
