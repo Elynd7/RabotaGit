@@ -31,9 +31,8 @@ class Calculator {
                 case '2':
                 $this->addNumbers();
                     break;
-                    break;
                 case '3':
-
+                    $this->subtractNumbers();
                     break;
                 case '4':
  
@@ -74,6 +73,12 @@ private function validateNumbers() {
         return false;
     }
     return true;
+}
+private function subtractNumbers() {
+    if ($this->validateNumbers()) {
+        $result = $this->num1 - $this->num2;
+        echo "Результат вычитания: {$this->num1} - {$this->num2} = {$result}\n";
+    }
 }
 
 $calculator = new Calculator();
