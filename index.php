@@ -29,10 +29,10 @@ class Calculator {
                     $this->inputNumbers();
                     break;
                 case '2':
-
+                $this->addNumbers();
                     break;
                 case '3':
-
+                    $this->subtractNumbers();
                     break;
                 case '4':
  
@@ -57,6 +57,27 @@ class Calculator {
         $this->num2 = (float)trim(fgets(STDIN));
         
         echo "Числа сохранены: {$this->num1} и {$this->num2}\n";
+    }
+}
+
+private function addNumbers() {
+    if ($this->validateNumbers()) {
+        $result = $this->num1 + $this->num2;
+        echo "Результат сложения: {$this->num1} + {$this->num2} = {$result}\n";
+    }
+}
+
+private function validateNumbers() {
+    if ($this->num1 === null || $this->num2 === null) {
+        echo "Ошибка: сначала введите числа (пункт 1)\n";
+        return false;
+    }
+    return true;
+}
+private function subtractNumbers() {
+    if ($this->validateNumbers()) {
+        $result = $this->num1 - $this->num2;
+        echo "Результат вычитания: {$this->num1} - {$this->num2} = {$result}\n";
     }
 }
 
